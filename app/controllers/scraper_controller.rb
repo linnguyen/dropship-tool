@@ -9,5 +9,6 @@ class ScraperController < ApplicationController
     byebug
     title = doc.css('div.pro_attr_box table tr[2] td li[3] img').attr('title').value
     # pace.doc.at_css('#idLinkProductMainImage img').attr('src')
+    # refer https://medium.com/@inanbunyamin90/using-capybara-for-scraping-9b078773c7c2
   end
 end
