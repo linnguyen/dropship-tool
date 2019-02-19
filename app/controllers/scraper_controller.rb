@@ -7,6 +7,7 @@ class ScraperController < ApplicationController
     url = "https://us.banggood.com/Wholesale-Warehouse-1-wp-Usa-1227976.html?akmClientCountry=VN&rmmds=DSdownloadcenter"
     doc = Nokogiri::HTML(open(url))
     byebug
-    @variant_image = doc.css('div.pro_attr_box > table')
+    title = doc.css('div.pro_attr_box table tr[2] td li[3] img').attr('title').value
+    # pace.doc.at_css('#idLinkProductMainImage img').attr('src')
   end
 end
