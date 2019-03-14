@@ -1,0 +1,71 @@
+ #   uri = URI('https://api.ebay.com/ws/api.dll')
+    #
+    #   req = Net::HTTP::Post.new(uri)
+    #   # req.body = xml_string
+    #   req.content_type = 'text/xml'
+    #   # req.set_form_data('from' => '2005-01-01', 'to' => '2005-03-31')
+    #
+    #   # res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+    #   #   http.request(req)
+    #   # end
+    #   xml_data = %{<?xml version="1.0" encoding="UTF-8"?>
+    # <spa:data xmlns:spa="http://www.Sparrow.com/" object="Sparrow.PropertyList.1">
+    #                <spa:proplist>
+    #                               <spa:propval name="username">jer</spa:propval>
+    #                </spa:proplist>
+    # </spa:data>}
+    #
+    #   res = req.post(
+    #       uri.path,
+    #       xml_data,
+    #       {'Content-Type' => 'text/xml', 'Content-Length' => xml_data.length.to_s, 'Authorization' => "Basic #{base64user_and_pass}", "Connection" => "keep-alive"}
+    #   )
+    #
+    #   case res
+    #   when Net::HTTPSuccess, Net::HTTPRedirection
+    #     # OK
+    #   else
+    #     res.value
+    #   end
+    #
+    #
+    #
+    #
+
+
+    # uri = URI.parse("https://api.ebay.com/ws/api.dll")
+    #
+    #
+    # # response = Net::HTTP.post_form(uri, {"q" => "My query", "per_page" => "50"})
+    #
+    #
+    # http = Net::HTTP.new(uri.host, uri.port)
+    # http.use_ssl = true if uri.scheme == 'https'
+    #
+    # request = Net::HTTP::Post.new(uri.request_uri)
+    # request.set_form_data({"q" => "My query", "per_page" => "50"})
+    #
+    # request["Content-Type"] = "application/json"
+    #
+    # response = http.request(request)
+
+
+    # uri = URI("https://api.ebay.com/ws/api.dll")
+    # http = Net::HTTP.new(uri.host, uri.port)
+    # http.use_ssl = true if uri.scheme == 'https'
+    #
+    # request = Net::HTTP::Post.new(uri.to_s)
+    # request['Content-Type'] = 'text/xml'
+    # request['X-EBAY-API-COMPATIBILITY-LEVEL'] = "911"
+    # request['X-EBAY-API-SITEID'] = "0"
+    # request['X-EBAY-API-CALL-NAME'] = "GeteBayOfficialTime"
+    # request.body = '<?xml version="1.0" encoding="utf-8"?>
+    # <GeteBayOfficialTimeRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+    #   <RequesterCredentials>
+    #     <eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**YDCHXA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6ADloOoCZCHoQydj6x9nY+seQ**8toFAA**AAMAAA**GUveEELf6OyzywF1LZ2AxnLxoiLtqd0fUFtlgBBHlFcJq+f4tYfRp6Hu/u3otqXoxamaN2dNjjZxAXfFvCgEYKyW40ZZFLlb2Pnql1rQmrNRILlBWp/W6JMu7NgLPUm4u0rGujHC36FFU+2AsFdq3RUulbUYXWcJmxgeRYKQYbIVYj6+3dTzbK29OS0dZW4G10ekYLN81//OWdVHL/s208sF6YDxfljGJa2gXEFxLZcHpa4GnVLhLiTqMnP7PF7EPPVT8k540EoVFoShsjJ7XGFE5hdaR+TRXY5l5g/kaGPYrOOxvSHEgK2LELx5q1TlIX9LY25bA4y4xtJwCuOXCKdjN1lJAugAartDhsyFaFNI3sn+4+N43O9VwyJv9Yez+ycQSuTVnnIbB7yO/wvW5DuAVRGMTmzeamStTyoRVplkDLGoumCIhgDX4s52aSuD9MJaKBoJIJmwBi1tNjILeQfQsAb+zT0UTMJ8yF+/yy/Xu517mbyvfEuu3eTnVMMaXwNTDdNC2bcICUX22/sBVRj+qRpJFkuVTVTx9pVZvOJfwjw6HTC53BNkJ7xb/hHT0Rp6aHKbqsJ5D2yRPZX5FxThwO8yp7pbiiDVJthYCyUEheKVaSO/Z2uM7kvRUXZi2C0eQQ94SWik+tjto2LDHZXUUXgqIOPeQb46rnh0F5NmoS1OOpAlV/XghGyAYPHg6qY+fsabmldkPgA3SLCUik4NmArm2+HdAS7G48wr8uJkxphmeVtGvf3KTqLM8iLv</eBayAuthToken>
+    #   </RequesterCredentials>
+    # </GeteBayOfficialTimeRequest>'
+    #
+    # response = http.request(request)
+    #
+    # byebug
