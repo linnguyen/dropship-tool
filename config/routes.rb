@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   root 'ebay#index'
 
-  #get '/product', :to => 'ebay#index'
+  post '/ali', :to => 'ebay#aliexpress'
 end

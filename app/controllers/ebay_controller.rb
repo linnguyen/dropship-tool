@@ -1,4 +1,6 @@
 class EbayController < ApplicationController
+  include EbayHelper
+
   require 'net/http'
   require 'json'
 
@@ -9,101 +11,7 @@ class EbayController < ApplicationController
   require 'selenium-webdriver'
   require 'capybara'
 
-  def banggood
-    Selenium::WebDriver::Chrome.driver_path = "/home/ryne/Desktop/chromedriver"
-    Capybara.register_driver :selenium do |app|
-      # Capybara::Selenium::Driver.new(app, browser: :chrome,
-      #                                options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu]))
-
-      Capybara::Selenium::Driver.new(app, browser: :chrome)
-    end
-    Capybara.javascript_driver = :chrome
-    Capybara.configure do |config|
-      config.default_max_wait_time = 10 # seconds
-      config.default_driver = :selenium
-    end
-
-    browser = Capybara.current_session
-    driver = browser.driver.browser
-
-    url = "https://sea.banggood.com/XANES-K8-1_3-IPS-Color-Touch-Screen-Waterproof-Smart-Watch-Heart-Rate-Fitness-Exercise-Bracelet-p-1385004.html?rmmds=DSdownloadcenter&ID=227&cur_warehouse=CN"
-    browser.visit url
-
-
-    # Wait browser to load
-    loop do
-      sleep(2)
-      if driver.execute_script('return document.readyState') == "complete"
-        break
-      end
-    end
-
-    driver.execute_script "window.scrollBy(0,10000)"
-
-
-    doc = Nokogiri::HTML(driver.page_source);
-
-
-    @description = doc.css('div.jsPolytypeContWrap').each do |n|
-      puts n.inner_html
-    end
-
-  end
-
   def index
-
-    Selenium::WebDriver::Chrome.driver_path = "/home/ryne/Desktop/chromedriver"
-    Capybara.register_driver :selenium do |app|
-      # Capybara::Selenium::Driver.new(app, browser: :chrome,
-      #                                options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu]))
-
-      Capybara::Selenium::Driver.new(app, browser: :chrome)
-    end
-    Capybara.javascript_driver = :chrome
-    Capybara.configure do |config|
-      config.default_max_wait_time = 10 # seconds
-      config.default_driver = :selenium
-    end
-
-    browser = Capybara.current_session
-    driver = browser.driver.browser
-
-    url = "https://www.aliexpress.com/item/5-CM-Dog-Toy-Rubber-Balls-Pet-Dog-Cat-Puppy-Chew-Toys-Ball-Chew-Toys-Tooth/32788039283.html?spm=2114.11010108.06001.20.650c649b8rJchQ&gps-id=pcJustForYou&scm=1007.13562.109986.0&scm_id=1007.13562.109986.0&scm-url=1007.13562.109986.0&pvid=897b3a37-57b9-43f7-89f3-6a93e1588c1d"
-    browser.visit url
-
-
-    # Wait browser to load
-    loop do
-      sleep(2)
-      if driver.execute_script('return document.readyState') == "complete"
-        break
-      end
-    end
-
-    driver.execute_script " window.scrollTo(0, 0)"
-
-
-    doc = Nokogiri::HTML(driver.page_source);
-
-
-    @description = doc.css('div.description-content').each do |n|
-      puts n.inner_html
-    end
-
-  end
-
-
-  def index1
-    # url = "https://sea.banggood.com/XANES-W1-1_3-IPS-Color-Screen-GPS-Smart-Watch-Waterproof-Heart-Rate-Monitor-Smart-Bracelet-mi-band-p-1336197.html?rmmds=DSdownloadcenter&ID=226&cur_warehouse=CN"
-    url = "https://sea.banggood.com/XANES-K8-1_3-IPS-Color-Touch-Screen-Waterproof-Smart-Watch-Heart-Rate-Fitness-Exercise-Bracelet-p-1385004.html?rmmds=DSdownloadcenter&ID=227&cur_warehouse=CN"
-    doc = Nokogiri::HTML(open(url))
-
-    @description = doc.css('div.jsPolytypeContWrap').each do |n|
-      puts n.inner_html
-    end
-
-    # pace.doc.at_css('#idLinkProductMainImage img').attr('src')
-    # refer https://medium.com/@inanbunyamin90/using-capybara-for-scraping-9b078773c7c2
   end
 
   def create_item
@@ -181,4 +89,122 @@ class EbayController < ApplicationController
     end
   end
 
+  private
+
+  def banggood
+    Selenium::WebDriver::Chrome.driver_path = "/home/ryne/Desktop/chromedriver"
+    Capybara.register_driver :selenium do |app|
+      # Capybara::Selenium::Driver.new(app, browser: :chrome,
+      #                                options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu]))
+
+      Capybara::Selenium::Driver.new(app, browser: :chrome)
+    end
+    Capybara.javascript_driver = :chrome
+    Capybara.configure do |config|
+      config.default_max_wait_time = 10 # seconds
+      config.default_driver = :selenium
+    end
+
+    browser = Capybara.current_session
+    driver = browser.driver.browser
+
+    url = "https://sea.banggood.com/XANES-K8-1_3-IPS-Color-Touch-Screen-Waterproof-Smart-Watch-Heart-Rate-Fitness-Exercise-Bracelet-p-1385004.html?rmmds=DSdownloadcenter&ID=227&cur_warehouse=CN"
+    browser.visit url
+
+
+    # Wait browser to load
+    loop do
+      sleep(2)
+      if driver.execute_script('return document.readyState') == "complete"
+        break
+      end
+    end
+
+    driver.execute_script "window.scrollBy(0,10000)"
+
+
+    doc = Nokogiri::HTML(driver.page_source);
+
+
+    @description = doc.css('div.jsPolytypeContWrap').each do |n|
+      puts n.inner_html
+    end
+
+  end
+
+  def aliexpress
+
+    Selenium::WebDriver::Chrome.driver_path = "/home/ryne/Desktop/chromedriver"
+    Capybara.register_driver :selenium do |app|
+      Capybara::Selenium::Driver.new(app, browser: :chrome,
+                                     options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu]))
+
+      # Capybara::Selenium::Driver.new(app, browser: :chrome)
+    end
+    Capybara.javascript_driver = :chrome
+    Capybara.configure do |config|
+      config.default_max_wait_time = 10 # seconds
+      config.default_driver = :selenium
+    end
+
+    browser = Capybara.current_session
+    driver = browser.driver.browser
+
+    url = params[:url]
+    browser.visit url
+
+
+    # Wait browser to load
+    loop do
+      sleep(2)
+      if driver.execute_script('return document.readyState') == "complete"
+        break
+      end
+    end
+
+
+    #
+    el = driver.find_elements(:css, "div.description-content")
+    driver.action.move_to(el[0]).perform
+
+    loop do
+      sleep(2)
+      logger.info "Wait for JavaScript Loading"
+      if !browser.has_css?('div.description-content > div.loading32')
+        break
+      end
+    end
+
+    # sleep(20)
+
+    doc = Nokogiri::HTML(driver.page_source);
+
+    itemSpecificHash = Hash.new
+    doc.css('ul.product-property-list li').each do |el|
+      itemSpecificHash[el.css('span.propery-title').text] = el.css('span.propery-des').text
+    end
+
+    packageDetailHash = Hash.new
+    doc.css('ul.product-packaging-list li').each do |el|
+      packageDetailHash[el.css('span.packaging-title').text] = el.css('span.packaging-des').text
+    end
+
+
+    # mainImageUrl = doc.css('img#poster').attr('src').value
+    mainImageUrl = doc.css('a.ui-image-viewer-thumb-frame img').attr('src').value
+    altMainImage = doc.css('a.ui-image-viewer-thumb-frame img').attr('alt').value
+    title = doc.css('h1.product-name').text
+
+
+    # @description = doc.css('div.description-content').each do |n|
+    #   puts n.inner_html
+    # end
+    #
+
+    @description = decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash
+  end
+
 end
+
+
+
