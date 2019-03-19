@@ -40,7 +40,9 @@ class EbayController < ApplicationController
       image_thumb_list += '<PictureURL>' + img.css('img').attr('src').value.gsub('.jpg_50x50', '') + '</PictureURL>'
     end
 
-    description = get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash
+    @description = get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash
+
+    render 'index'
 
 
     # @description = doc.css('div.description-content').each do |n|
@@ -49,60 +51,60 @@ class EbayController < ApplicationController
     #
 
     # request log
-    logger.info add_item_req token, valid_title, description, 11, image_thumb_list
+    logger.info add_item_req token, valid_title, @description, 11, image_thumb_list
 
 
     #GET SUGGESTED CATEGORIES
     #---------------------------------------------------------------------------------------------------------------------------------------------
-    begin
-      # uri = URI("https://api.ebay.com/ws/api.dll")
-      uri = URI("https://api.ebay.com/ws/api.dll")
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true if uri.scheme == 'https'
-
-      req = Net::HTTP::Post.new(
-          uri.path,
-          {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'GetSuggestedCategories'}
-      )
-      # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
-      req.body = get_suggested_item_req token, title
-
-      res = http.request(req)
-
-      case res
-      when Net::HTTPSuccess, Net::HTTPRedirection
-        # OK
-        categoryId = get_suggested_category_id res.body
-
-        #ADD ITEM
-        #-------------------------------------------------------------------------------------------------------------------------------------------------
-        begin
-          # uri = URI("https://api.ebay.com/ws/api.dll")
-          http = Net::HTTP.new(uri.host, uri.port)
-          http.use_ssl = true if uri.scheme == 'https'
-
-          req = Net::HTTP::Post.new(
-              uri.path,
-              {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'AddItem'}
-          )
-          # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
-          req.body = add_item_req token, valid_title, description, categoryId, image_thumb_list
-
-          res = http.request(req)
-
-          case res
-          when Net::HTTPSuccess, Net::HTTPRedirection
-            # OK
-            byebug
-          else
-            res.value
-          end
-        end
-
-      else
-        res.value
-      end
-    end
+    # begin
+    #   # uri = URI("https://api.ebay.com/ws/api.dll")
+    #   uri = URI("https://api.ebay.com/ws/api.dll")
+    #   http = Net::HTTP.new(uri.host, uri.port)
+    #   http.use_ssl = true if uri.scheme == 'https'
+    #
+    #   req = Net::HTTP::Post.new(
+    #       uri.path,
+    #       {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'GetSuggestedCategories'}
+    #   )
+    #   # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
+    #   req.body = get_suggested_item_req token, title
+    #
+    #   res = http.request(req)
+    #
+    #   case res
+    #   when Net::HTTPSuccess, Net::HTTPRedirection
+    #     # OK
+    #     categoryId = get_suggested_category_id res.body
+    #
+    #     #ADD ITEM
+    #     #-------------------------------------------------------------------------------------------------------------------------------------------------
+    #     begin
+    #       # uri = URI("https://api.ebay.com/ws/api.dll")
+    #       http = Net::HTTP.new(uri.host, uri.port)
+    #       http.use_ssl = true if uri.scheme == 'https'
+    #
+    #       req = Net::HTTP::Post.new(
+    #           uri.path,
+    #           {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'AddItem'}
+    #       )
+    #       # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
+    #       req.body = add_item_req token, valid_title, description, categoryId, image_thumb_list
+    #
+    #       res = http.request(req)
+    #
+    #       case res
+    #       when Net::HTTPSuccess, Net::HTTPRedirection
+    #         # OK
+    #         byebug
+    #       else
+    #         res.value
+    #       end
+    #     end
+    #
+    #   else
+    #     res.value
+    #   end
+    # end
       #END -------------------------------------------------------------------------------------------------------------------------------------------------
   end
 
@@ -150,7 +152,7 @@ class EbayController < ApplicationController
   end
 
   def crawl_aliexpress
-    Selenium::WebDriver::Chrome.driver_path = "/home/ryne/Desktop/chromedriver"
+    Selenium::WebDriver::Chrome.driver_path = "../dropship-tool/driver/chromedriver"
     Capybara.register_driver :selenium do |app|
       Capybara::Selenium::Driver.new(app, browser: :chrome,
                                      options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu]))
