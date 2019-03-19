@@ -1,8 +1,10 @@
 <p>Find me in app/views/ebay/get_product.html.erb</p>
 
-<%= form_tag ali_path do %>
+<%= form_tag add_item_path do %>
   <%= text_field_tag :url %>
   <%= submit_tag "Scrape", class: "btn" %>
 <% end %>
+
+<%= @guitar %>
 
 

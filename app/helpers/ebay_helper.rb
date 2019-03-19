@@ -1,5 +1,5 @@
 module EbayHelper
-  def decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash
+  def get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash
 
     itemSpecific = ""
     itemSpecificHash.each do |key, value|
@@ -234,9 +234,85 @@ module EbayHelper
       </tbody>
   </table>
   <span id="closeHtml"></span>
-  <script src="https://ir.ebaystatic.com/rs/v/1yzqmzxk3a3utciscis2t10n1uu.js" type="text/javascript"></script>
   </body>
 </html>
     '
+  end
+
+  def get_suggested_item_req token, query
+    req = '
+      <?xml version="1.0" encoding="utf-8"?>
+  <GetSuggestedCategoriesRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+    <RequesterCredentials>
+      <eBayAuthToken>' + token + '</eBayAuthToken>
+    </RequesterCredentials>
+    <Query>' + query + '</Query>
+  </GetSuggestedCategoriesRequest>'
+  end
+
+  def add_item_req token, title, description, categoryID, pictureUrls
+    req = '
+    <?xml version="1.0" encoding="utf-8"?>
+        <AddItemRequest
+    xmlns="urn:ebay:apis:eBLBaseComponents">
+    <RequesterCredentials>
+    <eBayAuthToken>' + token + '</eBayAuthToken>
+	</RequesterCredentials>
+    <ErrorLanguage>en_US</ErrorLanguage>
+	<WarningLevel>High</WarningLevel>
+    <Item>
+    <Title>' + title + '</Title>
+		<Description><![CDATA[' + description + ']]></Description>
+    <PrimaryCategory>
+    <CategoryID>' + categoryID.to_s + '</CategoryID>
+		</PrimaryCategory>
+    <StartPrice>1.0</StartPrice>
+		<CategoryMappingAllowed>true</CategoryMappingAllowed>
+    <ConditionID>4000</ConditionID>
+		<Country>US</Country>
+    <Currency>USD</Currency>
+		<DispatchTimeMax>3</DispatchTimeMax>
+    <ListingDuration>Days_7</ListingDuration>
+		<ListingType>Chinese</ListingType>
+    <PaymentMethods>PayPal</PaymentMethods>
+		<PayPalEmailAddress>nguyenvanlin01041994@gmail.com</PayPalEmailAddress>
+    <PictureDetails>
+    <GalleryType>Gallery</GalleryType>
+    ' + pictureUrls + '
+		</PictureDetails>
+    <ConditionID>1000</ConditionID>
+    <PostalCode>95125</PostalCode>
+		<Quantity>1</Quantity>
+    <ReturnPolicy>
+    <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
+			<RefundOption>MoneyBack</RefundOption>
+    <ReturnsWithinOption>Days_30</ReturnsWithinOption>
+			<ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
+    </ReturnPolicy>
+		<ShippingDetails>
+			<ShippingType>Flat</ShippingType>
+    <ShippingServiceOptions>
+    <ShippingServicePriority>1</ShippingServicePriority>
+				<ShippingService>USPSMedia</ShippingService>
+    <ShippingServiceCost>2.50</ShippingServiceCost>
+			</ShippingServiceOptions>
+    </ShippingDetails>
+		<Site>US</Site>
+    </Item>
+    </AddItemRequest>'
+  end
+
+  def get_valid_title title
+    valid_name = ""
+    title_arr = title.split(" ")
+    title_arr.each_with_index do |w, index|
+      valid_name = valid_name + w.to_s + " "
+      if ((index + 1) < title_arr.size && (valid_name + title_arr[index + 1]).size <= 80)
+        next
+      else
+        break
+      end
+    end
+    return valid_name.strip
   end
 end
