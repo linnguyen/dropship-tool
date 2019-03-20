@@ -5,6 +5,8 @@
   <%= submit_tag "Scrape", class: "btn" %>
 <% end %>
 
-<%= @description.to_s.html_safe %>
+<% if @description %>
+  <%= @description.to_s.html_safe %>
+<% end %>
 
 
