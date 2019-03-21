@@ -1,5 +1,5 @@
 module EbayHelper
-  def get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash
+  def get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
 
     itemSpecific = ""
     itemSpecificHash.each do |key, value|
@@ -87,36 +87,7 @@ module EbayHelper
 
                                                       <div>
                                                           <div>Product Description</div>
-
-                                                          <div>
-                                                              <div>
-                                                                  <p><span><span><b><span>' + title + '</span></b></span></span>
-                                                                  </p>
-                                                                          <p></p>
-
-                                                                          <p></p>
-
-                                                                          <p></p>
-
-                                                                          <p></p>
-
-                                                                          <p></p>
-
-                                                                          <p></p>
-
-                                                                          <p></p>
-
-                                                                          <p></p>
-                                                                      </li>
-                                                                  </ul>
-                                                              </div>
-                                                          </div>
-
-                                                          <div>
-                                                              <div>
-                                                                  <div></div>
-                                                              </div>
-                                                          </div>
+                                                          ' + description + '
                                                       </div>
 
                                                       <div>

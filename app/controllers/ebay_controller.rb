@@ -40,28 +40,33 @@ class EbayController < ApplicationController
       image_thumb_list += '<PictureURL>' + img.css('img').attr('src').value.gsub('.jpg_50x50', '') + '</PictureURL>'
     end
 
-    description = get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash
-
-    byebug
-
     # Remove unnecessary element
     doc.search('.//widget').each do |node|
       node.remove
     end
 
-    @description = doc.search('.//span').each do |node|
-      puts '<span><li>' + node.text + '</li><span>'
+    # Remove image
+    doc.search('.//img').each do |node|
+      node.remove
     end
 
-    # @description = doc.css('div.description-content').each do |n|
-    #   puts n.inner_html
+    doc.css('*').remove_attr('style')
+
+    description = ""
+    doc.css('div.description-content').each do |n|
+      description += n.inner_html
+    end
+
+    @description = get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
+
+
+    # @description = doc.search('.//span').each do |node|
+    #   puts '<span><li>' + node.text + '</li><span>'
     # end
     #
-    # @description = doc.css('div.description-content').each do |n|
-    #   puts n.inner_html
-    # end
 
-    render 'index'
+    render "index"
+
 
     #GET SUGGESTED CATEGORIES
     #---------------------------------------------------------------------------------------------------------------------------------------------
@@ -256,7 +261,7 @@ class EbayController < ApplicationController
   end
 
   def crawl_aliexpress
-    Selenium::WebDriver::Chrome.driver_path = "/home/ryne/Rails/dropship_tool/driver/chromedriver"
+    Selenium::WebDriver::Chrome.driver_path = "../dropship-tool/driver/chromedriver"
     Capybara.register_driver :selenium do |app|
       Capybara::Selenium::Driver.new(app, browser: :chrome,
                                      options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu]))
