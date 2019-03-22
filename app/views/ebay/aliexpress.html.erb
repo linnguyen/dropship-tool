@@ -1,1 +1,13 @@
-<%= @description.to_s.html_safe %>
+<%= form_tag add_fixed_price_item_path, method: :post do %>
+  <div class="form-group">
+    <%= text_field_tag :keywords, params[:keywords], placeholder: "Enter your keyword", class: "input search-input" %>
+  </div>
+  <div class="form-group">
+
+  </div>
+  <%= button_tag(type: "submit", class: "search-btn") do %>
+    <i class="fa fa-search"></i>
+  <% end %>
+<% end %>
+
+<%= @description %>
