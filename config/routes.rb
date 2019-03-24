@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'ebay#index'
 
-  post '/add_item', :to => 'ebay#add_item'
+  post '/crawl', :to => 'ebay#crawl'
 
   post '/add_fixed_price_item', :to => 'ebay#add_fixed_price_item'
 end

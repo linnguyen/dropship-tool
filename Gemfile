@@ -46,6 +46,9 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'bootstrap-sass', '3.3.7'
 
+gem 'ckeditor_rails'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -64,7 +64,7 @@ module EbayHelper
                           <div class="listing_row1">
                               <div class="containerWidth">
                                   <div class="row">
-                                      <div class="col-md-6 desc">
+                                      <div class="col-md-12 desc">
                                           <h3>' + title + '</h3>
 
                                           <h4>Description</h4>
@@ -106,14 +106,6 @@ module EbayHelper
                                           </div>
 
                                           <p></p>
-                                      </div>
-
-                                      <div class="col-md-6">
-                                          <div class="preview" align="center"><img
-                                                  alt="' + altMainImage + '"
-                                                  class="mainImage" name="preview"
-                                                  src="' + mainImageUrl + '">
-                                          </div>
                                       </div>
                                   </div>
                               </div>

@@ -1,14 +1,56 @@
-<p>Find me in app/views/ebay/get_product.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h2><strong>Find me in app/views/ebay/get_product.html.erb </strong>
+      </h2>
+      <!-- Start form -->
+      <%= form_tag crawl_path do %>
+        <div class="form-group">
+          <%= text_field_tag :url, "", class: 'form-control', placeholder: 'Enter the url' %>
+        </div>
+        <div class="form-check">
+          <%= submit_tag "Scrape", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <!-- End form -->
+    </div>
+  </div>
 
-<%= form_tag add_item_path do %>
-  <%= text_field_tag :url %>
-  <%= submit_tag "Scrape", class: "btn" %>
-<% end %>
 
-<% if @description %>
-  <%= @description.to_s.html_safe %>
-<% end %>
 
+  <% if @description %>
+    <div class="row" style="margin-top: 100px;">
+      <form>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <label>Valid Title</label>
+          <div class="form-group">
+            <%= text_field_tag :url, @valid_title, class: 'form-control' %>
+          </div>
+          <label>Price</label>
+          <div class="form-group">
+            <%= text_field_tag :url, "", class: 'form-control' %>
+          </div>
+          <label></label>
+          <div class="form-group">
+            <%= text_field_tag :url, "", class: 'form-control' %>
+          </div>
+          <label>Valid Title</label>
+          <div class="form-group">
+            <%= text_field_tag :url, "", class: 'form-control' %>
+          </div>
+          <label>Description</label>
+          <div class="form-group">
+            <%= @description.to_s.html_safe %>
+          </div>
+          <div class="form-check">
+            <%= submit_tag "Send to ebay", class: "btn btn-info" %>
+          </div>
+        </div>
+      </form>
+    </div>
+  <% end %>
+
+</div>
 
 
 
