@@ -61,30 +61,31 @@ class EbayController < ApplicationController
 
       @description = get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
 
+
       #GET SUGGESTED CATEGORIES
       #---------------------------------------------------------------------------------------------------------------------------------------------
-      begin
-        uri = URI("https://api.ebay.com/ws/api.dll")
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = true if uri.scheme == 'https'
-
-        req = Net::HTTP::Post.new(
-            uri.path,
-            {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'GetSuggestedCategories'}
-        )
-        # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
-        req.body = get_suggested_item_req token, title
-
-        res = http.request(req)
-
-        case res
-        when Net::HTTPSuccess, Net::HTTPRedirection
-          # OK
-          categoryId = get_suggested_category_id res.body
-        else
-          res.value
-        end
-      end
+      # begin
+      #   uri = URI("https://api.ebay.com/ws/api.dll")
+      #   http = Net::HTTP.new(uri.host, uri.port)
+      #   http.use_ssl = true if uri.scheme == 'https'
+      #
+      #   req = Net::HTTP::Post.new(
+      #       uri.path,
+      #       {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'GetSuggestedCategories'}
+      #   )
+      #   # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
+      #   req.body = get_suggested_item_req token, title
+      #
+      #   res = http.request(req)
+      #
+      #   case res
+      #   when Net::HTTPSuccess, Net::HTTPRedirection
+      #     # OK
+      #     @categoryId = get_suggested_category_id res.body
+      #   else
+      #     res.value
+      #   end
+      # end
       #END -------------------------------------------------------------------------------------------------------------------------------------------------
 
       # @description = doc.search('.//span').each do |node|
@@ -132,7 +133,6 @@ class EbayController < ApplicationController
       case res
       when Net::HTTPSuccess, Net::HTTPRedirection
         # OK
-        byebug
       else
         res.value
       end
@@ -204,7 +204,7 @@ class EbayController < ApplicationController
   end
 
   def crawl_aliexpress url
-    Selenium::WebDriver::Chrome.driver_path = "../dropship-tool/driver/chromedriver"
+    Selenium::WebDriver::Chrome.driver_path = "../dropship_tool/driver/chromedriver"
     Capybara.register_driver :selenium do |app|
       Capybara::Selenium::Driver.new(app, browser: :chrome,
                                      options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu]))
@@ -231,7 +231,6 @@ class EbayController < ApplicationController
       end
     end
 
-
     #
     el = driver.find_elements(:css, "div.description-content")
     driver.action.move_to(el[0]).perform
@@ -248,8 +247,11 @@ class EbayController < ApplicationController
   end
 
   def get_suggested_category_id xml
-    byebug
     Nokogiri::XML(xml).css('CategoryID').first.text
+  end
+
+  def sold_price price
+
   end
 
 end
@@ -258,3 +260,5 @@ end
 #https://www.aliexpress.com/item/BRAND-DESIGN-Classic-Polarized-Sunglasses-Men-Women-Driving-Square-Frame-Sun-Glasses-Male-Goggle-UV400-Gafas/32904681270.html?spm=2114.search0604.3.14.c2a02a2dsuam9l&dp=240ab765dbbb508143c6c7227451d16b&af=821997&cv=47843&afref=https%253A%252F%252Fwww.aliexpress.com%252Faf%252FSunglasses-Glasses-Men-Women.html%253FSearchText%253DSunglasses%252BGlasses%252BMen%252BWomen%2526d%253Dy%2526initiative_id%253DSB_20190324043411%2526origin%253Dn%2526catId%253D0%2526isViewCP%253Dy%2526jump%253Dafs&mall_affr=pr3&dp=240ab765dbbb508143c6c7227451d16b&af=821997&cv=47843&afref=https%253A%252F%252Fwww.aliexpress.com%252Faf%252FSunglasses-Glasses-Men-Women.html%253FSearchText%253DSunglasses%252BGlasses%252BMen%252BWomen%2526d%253Dy%2526initiative_id%253DSB_20190324043411%2526origin%253Dn%2526catId%253D0%2526isViewCP%253Dy%2526jump%253Dafs&mall_affr=pr3&aff_platform=aaf&cpt=1553430864976&sk=VnYZvQVf&aff_trace_key=841263bfa178424593f3422293c9dcf4-1553430864976-01738-VnYZvQVf&terminal_id=f219ead3aeb045c18ee8d083635f7b81
 
 
+# manually for price
+# create variant
