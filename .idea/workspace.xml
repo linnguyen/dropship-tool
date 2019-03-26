@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f981b81-71d7-4436-9c87-c5de1b648696" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dropship_tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dropship_tool.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/ebay_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ebay_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/ebay_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/ebay_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/ebay/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/ebay/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note" beforeDir="false" afterPath="$PROJECT_DIR$/note" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -29,24 +27,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/e-shop-colorlib/e-shop/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="1405" column="21" lean-forward="true" selection-start-line="1030" selection-start-column="4" selection-end-line="1405" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/Downloads/des1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -58,28 +38,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ebay/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+            <state relative-caret-position="570">
+              <caret line="38" column="36" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ebay/aliexpress.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/helpers/ebay_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="5910">
+              <caret line="394" column="63" selection-start-line="394" selection-start-column="63" selection-end-line="394" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.scss">
+        <entry file="file://$PROJECT_DIR$/note">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+            <state relative-caret-position="335">
+              <caret line="554" column="72" lean-forward="true" selection-start-line="554" selection-start-column="72" selection-end-line="554" selection-end-column="72" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/ebay_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="66" column="120" lean-forward="true" selection-start-line="66" selection-start-column="120" selection-end-line="66" selection-end-column="120" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/scraper_helper.rb">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -122,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>description-c</find>
       <find>description-cont</find>
       <find>description-con</find>
       <find>font</find>
@@ -152,6 +145,7 @@
       <find>Brand Name</find>
       <find>get_suggested_category_id</find>
       <find>image_thumb_list</find>
+      <find>add_fixed_price_item</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,20 +157,20 @@
         <option value="$PROJECT_DIR$/app/views/scraper/scrape.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/scraper_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/note" />
         <option value="$USER_HOME$/Downloads/test1.html" />
         <option value="$USER_HOME$/Downloads/des2.html" />
         <option value="$PROJECT_DIR$/app/views/ebay/aliexpress.html.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/ebay_helper.rb" />
         <option value="$USER_HOME$/Downloads/des_template (copy).htm" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$USER_HOME$/Downloads/des.html" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/controllers/ebay_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/ebay/index.html.erb" />
         <option value="$USER_HOME$/Downloads/des1.html" />
+        <option value="$PROJECT_DIR$/app/helpers/ebay_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/ebay/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/ebay_controller.rb" />
+        <option value="$PROJECT_DIR$/note" />
       </list>
     </option>
   </component>
@@ -187,18 +181,17 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="130" />
-    <option name="y" value="164" />
-    <option name="width" value="1853" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1215" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
@@ -222,15 +215,7 @@
               <item name="dropship_tool" type="b2602c69:ProjectViewProjectNode" />
               <item name="dropship_tool" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dropship_tool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dropship_tool" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dropship_tool" type="b2602c69:ProjectViewProjectNode" />
@@ -272,6 +257,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,17 +483,29 @@
       <workItem from="1553432408820" duration="1791000" />
       <workItem from="1553499009470" duration="1971000" />
       <workItem from="1553501624802" duration="1714000" />
+      <workItem from="1553567598126" duration="1930000" />
+      <workItem from="1553569563629" duration="1502000" />
+      <workItem from="1553571370445" duration="1793000" />
+      <workItem from="1553573178169" duration="1315000" />
+      <workItem from="1553575153019" duration="1202000" />
+      <workItem from="1553577320178" duration="599000" />
+      <workItem from="1553579315827" duration="599000" />
+      <workItem from="1553581123533" duration="1567000" />
+      <workItem from="1553583064748" duration="1211000" />
+      <workItem from="1553588250376" duration="1008000" />
+      <workItem from="1553590062556" duration="1658000" />
+      <workItem from="1553591978782" duration="275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134863000" />
+    <option name="totallyTimeSpent" value="150037000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20342731" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23217247" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -520,7 +518,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.9395248" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.7983281" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.8045977" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -594,28 +592,7 @@
     <entry file="file://$USER_HOME$/Downloads/test1.html" />
     <entry file="file://$USER_HOME$/Downloads/des2.html" />
     <entry file="file://$USER_HOME$/Downloads/des_template (copy).htm" />
-    <entry file="file://$PROJECT_DIR$/note">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8873">
-          <caret line="467" column="21" selection-start-line="467" selection-start-column="21" selection-end-line="467" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/des.html" />
-    <entry file="file://$PROJECT_DIR$/app/controllers/ebay_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/ebay_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -636,6 +613,37 @@
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/e-shop-colorlib/e-shop/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21075">
+          <caret line="1405" column="21" selection-start-line="1030" selection-start-column="4" selection-end-line="1405" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/des1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ebay/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/ebay_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5910">
+          <caret line="394" column="63" selection-start-line="394" selection-start-column="63" selection-end-line="394" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/scraper_helper.rb">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.5.1/lib/ruby/2.5.0/net/http/header.rb">
       <provider selected="true" editor-type-id="text-editor">
@@ -665,24 +673,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ebay/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/note">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+        <state relative-caret-position="335">
+          <caret line="554" column="72" lean-forward="true" selection-start-line="554" selection-start-column="72" selection-end-line="554" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/e-shop-colorlib/e-shop/index.html">
+    <entry file="file://$PROJECT_DIR$/app/controllers/ebay_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="1405" column="21" lean-forward="true" selection-start-line="1030" selection-start-column="4" selection-end-line="1405" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/des1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state relative-caret-position="320">
+          <caret line="66" column="120" lean-forward="true" selection-start-line="66" selection-start-column="120" selection-end-line="66" selection-end-column="120" />
         </state>
       </provider>
     </entry>

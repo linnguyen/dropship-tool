@@ -35,9 +35,14 @@ class EbayController < ApplicationController
       mainImageUrl = doc.css('a.ui-image-viewer-thumb-frame img').attr('src').value
       altMainImage = doc.css('a.ui-image-viewer-thumb-frame img').attr('alt').value
       title = doc.css('h1.product-name').text
-      image_thumb_list = ""
-      doc.css('ul.image-thumb-list li').each do |img|
-        image_thumb_list += '<PictureURL>' + img.css('img').attr('src').value.gsub('.jpg_50x50', '') + '</PictureURL>'
+      @image_thumb_list = ""
+      image_tag = doc.css('ul.image-thumb-list li')
+      image_tag.each do |img|
+        if (img == image_tag.last)
+          @image_thumb_list += img.css('img').attr('src').value.gsub('.jpg_50x50', '')
+          break
+        end
+        @image_thumb_list += img.css('img').attr('src').value.gsub('.jpg_50x50', '') + ";"
       end
 
       # Remove unnecessary element
@@ -59,7 +64,7 @@ class EbayController < ApplicationController
 
       @valid_title = get_valid_title title
 
-      @description = get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
+      @description = get_description title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
 
 
       #GET SUGGESTED CATEGORIES
@@ -111,32 +116,47 @@ class EbayController < ApplicationController
   end
 
   def add_fixed_price_item
+    token = "AgAAAA**AQAAAA**aAAAAA**x0+QXA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6ADloOoCZCHoQydj6x9nY+seQ**8toFAA**AAMAAA**GUveEELf6OyzywF1LZ2AxnLxoiLtqd0fUFtlgBBHlFcJq+f4tYfRp6Hu/u3otqXoxamaN2dNjjZxAXfFvCgEYKyW40ZZFLlb2Pnql1rQmrNRILlBWp/W6JMu7NgLPUm4u0rGujHC36FFU+2AsFdq3RUulbUYXWcJmxgeRYKQYbIVYj6+3dTzbK29OS0dZW4G10ekYLN81//OWdVHL/s208sF6YDxfljGJa2gXEFxLZcHpa4GnVLhLiTqMnP7PF7EPPVT8k540EoVFoShsjJ7XGFE5hdaR+TRXY5l5g/kaGPYrOOxvSHEgK2LELx5q1TlIX9LY25bA4y4xtJwCuOXCKdjN1lJAugAartDhsyFaFNI3sn+4+N43O9VwyJv9Yez+ycQSuTVnnIbB7yO/wvW5DuAVRGMTmzeamStTyoRVplkDLGoumCIhgDX4s52aSuD9MJaKBoJIJmwBi1tNjILeQfQsAb+zT0UTMJ8yF+/yy/Xu517mbyvfEuu3eTnVMMaXwNTDdNC2bcICUX22/sBVRj+qRpJFkuVTVTx9pVZvOJfwjw6HTC53BNkJ7xb/hHT0Rp6aHKbqsJ5D2yRPZX5FxThwO8yp7pbiiDVJthYCyUEheKVaSO/Z2uM7kvRUXZi2C0eQQ94SWik+tjto2LDHZXUUXgqIOPeQb46rnh0F5NmoS1OOpAlV/XghGyAYPHg6qY+fsabmldkPgA3SLCUik4NmArm2+HdAS7G48wr8uJkxphmeVtGvf3KTqLM8iLv"
+    image_thumb_str = image_url params[:urls]
+    category_id = params[:category_id]
+    price = params[:price]
+    valid_title = params[:valid_title]
+    description = params[:description]
+
+    logger.info add_fixed_price_item_req token, valid_title, description, category_id, image_thumb_str
+
     #ADD ITEM
     #-------------------------------------------------------------------------------------------------------------------------------------------------
-    begin
-      # uri = URI("https://api.ebay.com/ws/api.dll")
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true if uri.scheme == 'https'
-
-      req = Net::HTTP::Post.new(
-          uri.path,
-          {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'AddItem'}
-      )
-      # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
-      # request log
-      logger.info add_item_req token, valid_title, description, categoryId, image_thumb_list
-
-      req.body = add_item_req token, valid_title, description, categoryId, image_thumb_list
-
-      res = http.request(req)
-
-      case res
-      when Net::HTTPSuccess, Net::HTTPRedirection
-        # OK
-      else
-        res.value
-      end
-    end
+    # begin
+    #   uri = URI("https://api.ebay.com/ws/api.dll")
+    #   http = Net::HTTP.new(uri.host, uri.port)
+    #   http.use_ssl = true if uri.scheme == 'https'
+    #
+    #   req = Net::HTTP::Post.new(
+    #       uri.path,
+    #       {'Content-Type' => 'text/xml', 'X-EBAY-API-COMPATIBILITY-LEVEL' => '911', 'X-EBAY-API-SITEID' => '0', 'X-EBAY-API-CALL-NAME' => 'AddFixedPriceItem'}
+    #   )
+    #   # req.body = {"token" => "15fdba59ecd6ccf9fc93c2b785721bc2952521b1877d95e5"}.to_json
+    #   # request log
+    #   logger.info add_fixed_price_item_req token, valid_title, description, category_id, image_thumb_str
+    #
+    #   req.body = add_fixed_price_item_req token, valid_title, description, category_id, image_thumb_str
+    #
+    #   res = http.request(req)
+    #
+    #   case res
+    #   when Net::HTTPSuccess, Net::HTTPRedirection
+    #     # OK
+    #     if has_listed_success res.body
+    #
+    #     else
+    #
+    #     end
+    #   else
+    #     res.value
+    #   end
+    # end
+    #-------------------------------------------------------------------------------------------------------------------------------------------------
   end
 
   def get_suggested_categories
@@ -248,6 +268,14 @@ class EbayController < ApplicationController
 
   def get_suggested_category_id xml
     Nokogiri::XML(xml).css('CategoryID').first.text
+  end
+
+  def has_listed_success xml
+    if Nokogiri::XML(xml).css('Ack').first.text.equal? "Failure"
+      return false
+    else
+      return true
+    end
   end
 
   def sold_price price

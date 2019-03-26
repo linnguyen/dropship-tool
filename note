@@ -467,3 +467,278 @@
       </Item>
     </AddItemRequest>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <ReviseFixedPriceItemRequest
+    	xmlns="urn:ebay:apis:eBLBaseComponents">
+    	<ErrorLanguage>en_US</ErrorLanguage>
+    	<WarningLevel>High</WarningLevel>
+    	<Item>
+    		<ItemID>153428980188</ItemID>
+    		<Variations>
+    			<Variation>
+    				<Delete>true</Delete>
+    				<SKU>RLauren_Wom_TShirt_Blu_S</SKU>
+    				<StartPrice>20.00</StartPrice>
+    				<Quantity>1</Quantity>
+    				<VariationSpecifics>
+    					<NameValueList>
+    						<Name>Color</Name>
+    						<Value>Blue</Value>
+    					</NameValueList>
+    					<NameValueList>
+    						<Name>Size</Name>
+    						<Value>S</Value>
+    					</NameValueList>
+    				</VariationSpecifics>
+    			</Variation>
+    			<Variation>
+    				<Delete>true</Delete>
+    				<SKU>RLauren_Wom_TShirt_Blu_M</SKU>
+    				<StartPrice>20.00</StartPrice>
+    				<Quantity>10</Quantity>
+    				<VariationSpecifics>
+    					<NameValueList>
+    						<Name>Color</Name>
+    						<Value>Blue</Value>
+    					</NameValueList>
+    					<NameValueList>
+    						<Name>Size</Name>
+    						<Value>M</Value>
+    					</NameValueList>
+    				</VariationSpecifics>
+    			</Variation>
+    			<Variation>
+    				<SKU>RLauren_Wom_TShirt_Peri_S</SKU>
+    				<StartPrice>20.00</StartPrice>
+    				<Quantity>10</Quantity>
+    				<VariationSpecifics>
+    					<NameValueList>
+    						<Name>Color</Name>
+    						<Value>Periwinkle</Value>
+    					</NameValueList>
+    					<NameValueList>
+    						<Name>Size</Name>
+    						<Value>S</Value>
+    					</NameValueList>
+    				</VariationSpecifics>
+    			</Variation>
+    			<Variation>
+    				<SKU>RLauren_Wom_TShirt_Peri_M</SKU>
+    				<StartPrice>20.00</StartPrice>
+    				<Quantity>10</Quantity>
+    				<VariationSpecifics>
+    					<NameValueList>
+    						<Name>Color</Name>
+    						<Value>Periwinkle</Value>
+    					</NameValueList>
+    					<NameValueList>
+    						<Name>Size</Name>
+    						<Value>M</Value>
+    					</NameValueList>
+    				</VariationSpecifics>
+    			</Variation>
+    			<Pictures>
+    				<VariationSpecificName>Color</VariationSpecificName>
+    				<VariationSpecificPictureSet>
+    					<VariationSpecificValue>Pink</VariationSpecificValue>
+    					<PictureURL>http://i12.ebayimg.com/03/i/04/8a/5f/a1_1_sbl.JPG</PictureURL>
+    					<PictureURL>http://i12.ebayimg.com/03/i/04/8a/5f/a1_1_sb2.JPG</PictureURL>
+    				</VariationSpecificPictureSet>
+    				<VariationSpecificPictureSet>
+    					<VariationSpecificValue>Periwinkle</VariationSpecificValue>
+    					<PictureURL>http://i22.ebayimg.com/01/i/04/8e/53/69_1_sbl.JPG</PictureURL>
+    					<PictureURL>http://i22.ebayimg.com/01/i/04/8e/53/69_1_sb2.JPG</PictureURL>
+    					<PictureURL>http://i22.ebayimg.com/01/i/04/8e/53/69_1_sb3.JPG</PictureURL>
+    				</VariationSpecificPictureSet>
+    				<VariationSpecificPictureSet>
+    					<VariationSpecificValue>Black</VariationSpecificValue>
+    					<PictureURL>http://i4.ebayimg.ebay.com/01/i/000/77/3c/d88f_1_sbl.JPG</PictureURL>
+    				</VariationSpecificPictureSet>
+    				<VariationSpecificPictureSet>
+    					<VariationSpecificValue>Yellow</VariationSpecificValue>
+    					<PictureURL>http://i4.ebayimg.ebay.com/01/i/000/77/3c/d89f_1_sbl.JPG</PictureURL>
+    				</VariationSpecificPictureSet>
+    			</Pictures>
+    		</Variations>
+    	</Item>
+    	<RequesterCredentials>
+    		<eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**x0+QXA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6ADloOoCZCHoQydj6x9nY+seQ**8toFAA**AAMAAA**GUveEELf6OyzywF1LZ2AxnLxoiLtqd0fUFtlgBBHlFcJq+f4tYfRp6Hu/u3otqXoxamaN2dNjjZxAXfFvCgEYKyW40ZZFLlb2Pnql1rQmrNRILlBWp/W6JMu7NgLPUm4u0rGujHC36FFU+2AsFdq3RUulbUYXWcJmxgeRYKQYbIVYj6+3dTzbK29OS0dZW4G10ekYLN81//OWdVHL/s208sF6YDxfljGJa2gXEFxLZcHpa4GnVLhLiTqMnP7PF7EPPVT8k540EoVFoShsjJ7XGFE5hdaR+TRXY5l5g/kaGPYrOOxvSHEgK2LELx5q1TlIX9LY25bA4y4xtJwCuOXCKdjN1lJAugAartDhsyFaFNI3sn+4+N43O9VwyJv9Yez+ycQSuTVnnIbB7yO/wvW5DuAVRGMTmzeamStTyoRVplkDLGoumCIhgDX4s52aSuD9MJaKBoJIJmwBi1tNjILeQfQsAb+zT0UTMJ8yF+/yy/Xu517mbyvfEuu3eTnVMMaXwNTDdNC2bcICUX22/sBVRj+qRpJFkuVTVTx9pVZvOJfwjw6HTC53BNkJ7xb/hHT0Rp6aHKbqsJ5D2yRPZX5FxThwO8yp7pbiiDVJthYCyUEheKVaSO/Z2uM7kvRUXZi2C0eQQ94SWik+tjto2LDHZXUUXgqIOPeQb46rnh0F5NmoS1OOpAlV/XghGyAYPHg6qY+fsabmldkPgA3SLCUik4NmArm2+HdAS7G48wr8uJkxphmeVtGvf3KTqLM8iLv</eBayAuthToken>
+    	</RequesterCredentials>
+    </ReviseFixedPriceItemRequest>
+
+
+
+# Create item with variation
+
+<?xml version="1.0" encoding="utf-8"?>
+<AddFixedPriceItemRequest
+	xmlns="urn:ebay:apis:eBLBaseComponents">
+	<ErrorLanguage>en_US</ErrorLanguage>
+	<WarningLevel>High</WarningLevel>
+	<Item>
+		<Country>US</Country>
+		<ConditionID>1000</ConditionID>
+		<Currency>USD</Currency>
+		<Description>
+			<![CDATA[![CDATA[<div class="wholeWidth"><header><div class="containerWidth"><img alt="banner" src="https://cldup.com/00FhLi9aZS.png" /></div></header><div class="containerWidth"><nav class="navbar navbar-default"><div class="container text-center"><div class="navbar-collapse" id="navbar"><ul class="nav navbar-nav"><li><a href="http://stores.ebay.com/linstore2019" target="_blank">Store</a></li><li><a href="https://www.ebay.com/sch/m.html?_nkw=&amp;_armrs=1&amp;_ipg=&amp;_from=&amp;_ssn=linstore2018&amp;_sop=10" target="_blank">New Arrivals</a></li><li><a href="http://my.ebay.com/ws/eBayISAPI.dll?AcceptSavedSeller&amp;ru=http%3A//cgi.ebay.com/ws/eBayISAPI.dll?ViewItemNext&amp;item=330478824623&amp;mode=0&amp;ssPageName=STRK:MEFS:ADDVI&amp;sellerid=linstore2018&amp;preference=0" target="_blank">Add to Favorite</a></li><li><a href="http://feedback.ebay.com/ws/eBayISAPI.dll?ViewFeedback2&amp;userid=linstore2018&amp;ftab=AllFeedback&amp;myworld=true&amp;rt=nc" target="_blank">View Feedback</a></li><li><a href="http://contact.ebay.com/ws/eBayISAPI.dll?FindAnswers&amp;frm=284&amp;requested=linstore2018&amp;iid=-1" target="_blank">Contact</a></li></ul></div></div></nav></div><div class="containerWidth hidden-sm hidden-xs"><img alt="30days" class="img-responsive" src="https://cldup.com/O73DZ9qvQm-3000x3000.png" /></div><div class="content"><div class="listing_row1"><div class="containerWidth"><div class="row"><div class="col-md-12 desc"><h3>BRAND DESIGN Classic Polarized Sunglasses Men Women Driving Square Frame Sun Glasses Male Goggle UV400 Gafas De Sol</h3><h4>Description</h4><p>&nbsp;</p><div><div><h2>Product Details</h2><div><div><div>Item specifics</div><div><ul><li><span>Brand Name:</span><span>LATASHA</span></li><li><span>Eyewear Type:</span><span>Sunglasses</span></li><li><span>Item Type:</span><span>Eyewear</span></li><li><span>Lenses Optical Attribute:</span><span>Gradient,Polarized,UV400,Mirror,Photochromic</span></li><li><span>Frame Material:</span><span>PLASTIC</span></li><li><span>Lenses Material:</span><span>Polaroid</span></li><li><span>Gender:</span><span>Men</span></li><li><span>Lens Height:</span><span>45 mm</span></li><li><span>Department Name:</span><span>Adult</span></li><li><span>Lens Width:</span><span>65 mm</span></li><li><span>Style:</span><span>Goggle</span></li><li><span>Model Number:</span><span>LA-006</span></li></ul></div></div><div><div>Product Description</div><div class="origin-part"><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://www.aliexpress.com/item/Classic-Polarized-Sunglasses-Men-Women-Retro-Brand-Designer-High-Quality-Sun-Glasses-Female-Male-Fashion-Mirror/32986023161.html">&nbsp;<img alt="DSC_5509" src="https://ae01.alicdn.com/kf/HTB1.OApLOrpK1RjSZFhq6xSdXXa0.jpg" /></a></p><p><img alt="-111111_01" src="https://ae01.alicdn.com/kf/HTB18gnraoLrK1Rjy0Fjq6zYXFXa5.jpg" /><img alt="-111111_02" src="https://ae01.alicdn.com/kf/HTB15y2iaXzsK1Rjy1Xbq6xOaFXaW.jpg" /><img alt="-111111_03" src="https://ae01.alicdn.com/kf/HTB1y1Pnah_rK1RkHFqDq6yJAFXaO.jpg" /><img alt="-111111_04" src="https://ae01.alicdn.com/kf/HTB12U2jacfrK1RkSmLyq6xGApXaA.jpg" /><img alt="-111111_05" src="https://ae01.alicdn.com/kf/HTB16xPiaifrK1RjSspbq6A4pFXa1.jpg" /><img alt="-111111_06" src="https://ae01.alicdn.com/kf/HTB1bivpajzuK1RjSsppq6xz0XXaR.jpg" /><img alt="-111111_08" src="https://ae01.alicdn.com/kf/HTB1cy2rajDuK1Rjy1zjq6zraFXac.jpg" /><img alt="-111111_09" src="https://ae01.alicdn.com/kf/HTB1CvnoacrrK1RjSspaq6AREXXa6.jpg" /><img alt="-111111_10" src="https://ae01.alicdn.com/kf/HTB1_zbhadfvK1RjSspoq6zfNpXa2.jpg" /><img alt="-111111_11" src="https://ae01.alicdn.com/kf/HTB18l6najzuK1RjSspeq6ziHVXai.jpg" /><img alt="-111111_12" src="https://ae01.alicdn.com/kf/HTB1p7_paffsK1RjSszgq6yXzpXaB.jpg" /><img alt="-111111_13" src="https://ae01.alicdn.com/kf/HTB1ULYlaiDxK1RjSsphq6zHrpXax.jpg" /><img alt="-111111_16" src="https://ae01.alicdn.com/kf/HTB1Xl_najzuK1RjSspeq6ziHVXa9.jpg" /><img alt="-111111_18" src="https://ae01.alicdn.com/kf/HTB1H4TmaoLrK1Rjy1zbq6AenFXal.jpg" /><img src="https://ae01.alicdn.com/kf/HTB1gF6uajnuK1RkSmFPq6AuzFXaT.jpg" /></p></div></div><div><div>Packaging Details</div><div><ul><li><span>Unit Type:</span><span>piece</span></li><li><span>Package Weight:</span><span>0.05kg (0.11lb.)</span></li><li><span>Package Size:</span><span>20cm x 10cm x 5cm (7.87in x 3.94in x 1.97in)</span></li></ul></div></div><div><div>&nbsp;</div></div></div></div></div><p>&nbsp;</p></div></div></div></div><div class="listing_row2"><div class="listing_row2"><div class="containerWidth"><div class="tab_content" id="aboutus"><h4>ABOUT US</h4><p>We offer the best prices around on high quality products. Our E-store includes media such as books, movies, music and games while offering electronics, toys, sporting apparel, clothing, tools, general home, garden items and more.</p></div><div class="tab_content" id="shipping"><h4>SHIPPING</h4><p>We are always working hard to ensure your package arrives as soon as possible. Please understand that some factors like weather, high postal traffic, and the performance of shipping companies are outside of our control.<br /><br />
+We offer free shipping to the lower 48 states and ship within 2 business days of payment, usually sooner. We do not accept P.O. Boxes. Please provide a physical address.<br /><br />
+For shipping outside of the continental USA, we only use eBay&#39; s Global Shipping Program.The item is shipped to KY and then sent to the rest of the world.International customers are responsible for all duties and taxes. Continue to check out in order to calculate costs for shipping the item to your country.Messages regarding eBay &#39;s Global Shipping Program MUST be directed at eBay EXCLUSIVELY.</p></div><div class="tab_content" id="return"><h4>RETURNS</h4><p>We offer a 30-Day Return Policy on items which you are not completely satisfied with. You have the option for a full-refund or an exchange of the item. No returns are available on items shipped outside of the USA.</p></div><div class="tab_content" id="payment"><h4>PAYMENT</h4><p>We accept PayPal.</p></div><div class="tab_content" id="contact"><h4>CONTACT US</h4><p>This page content is yet to come<br />
+Please ad us to your favorite seller and visit again later<br />
+Thank You</p></div><div class="tab_content"><h4>CUSTOMER SATISFACTION</h4><p>We try our very best to make sure every customer is completely satisfied. If there &#39;s a problem, message us! We &#39;re happy to help.</p></div></div></div></div></div><footer><div class="containerWidth"><div class="footer_bottom" style="border-top: 1px solid #59a2d8;"><div class="row" style="border-bottom: 1px solid #59a2d8;"><div class="col-md-6 col-sm-8 col-xs-12"><h4>WE ACCEPT</h4><img alt="paypal" class="img-responsive" src="https://cldup.com/lg0nO9KkhD.jpg" style="width:60%;margin: 20px 0 10px 0;" /></div></div></div></div></footer></div><table align="center" style="border-spacing: 0px; width: 100%;"><tbody><tr><td><div id="ds_div"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></div></td></tr></tbody></table><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Condensed:300,400,700" rel="stylesheet" /><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /><link href="https://cldup.com/BIUxxmE1z4.css" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Bree+Serif|Cairo|Saira+Semi+Condensed:400,700|Ubuntu" rel="styleshe]]>
+		</Description>
+		<DispatchTimeMax>3</DispatchTimeMax>
+		<ListingDuration>GTC</ListingDuration>
+		<ListingType>FixedPriceItem</ListingType>
+		<PaymentMethods>PayPal</PaymentMethods>
+		<PayPalEmailAddress>nguyenvanlin01041994@gmail.com</PayPalEmailAddress>
+		<PostalCode>95125</PostalCode>
+		<PrimaryCategory>
+			<CategoryID>79720</CategoryID>
+		</PrimaryCategory>
+		<Title>BRAND DESIGN Classic Polarized Sunglasses Men Women Driving Square Frame Sun</Title>
+		<PictureDetails>
+			<PictureURL>https://ae01.alicdn.com/kf/HTB1oG8abzfguuRjSszcq6zb7FXab/BRAND-DESIGN-Classic-Polarized-Sunglasses-Men-Women-Driving-Square-Frame-Sun-Glasses-Male-Goggle-UV400-Gafas.jpg</PictureURL>
+			<PictureURL>https://ae01.alicdn.com/kf/HTB1fb_sAlyWBuNkSmFPq6xguVXaT/BRAND-DESIGN-Classic-Polarized-Sunglasses-Men-Women-Driving-Square-Frame-Sun-Glasses-Male-Goggle-UV400-Gafas.jpg</PictureURL>
+			<PictureURL>https://ae01.alicdn.com/kf/HTB1XM9wIwaTBuNjSszfq6xgfpXai/BRAND-DESIGN-Classic-Polarized-Sunglasses-Men-Women-Driving-Square-Frame-Sun-Glasses-Male-Goggle-UV400-Gafas.jpg</PictureURL>
+			<PictureURL>https://ae01.alicdn.com/kf/HTB1D.zNIx1YBuNjy1zcq6zNcXXaN/BRAND-DESIGN-Classic-Polarized-Sunglasses-Men-Women-Driving-Square-Frame-Sun-Glasses-Male-Goggle-UV400-Gafas.jpg</PictureURL>
+			<PictureURL>https://ae01.alicdn.com/kf/HTB1gVH1IrSYBuNjSspiq6xNzpXaJ/BRAND-DESIGN-Classic-Polarized-Sunglasses-Men-Women-Driving-Square-Frame-Sun-Glasses-Male-Goggle-UV400-Gafas.jpg</PictureURL>
+			<PictureURL>https://ae01.alicdn.com/kf/HTB1uU_NIx1YBuNjy1zcq6zNcXXaM/BRAND-DESIGN-Classic-Polarized-Sunglasses-Men-Women-Driving-Square-Frame-Sun-Glasses-Male-Goggle-UV400-Gafas.jpg</PictureURL>
+		</PictureDetails>
+		<ReturnPolicy>
+			<ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
+			<RefundOption>MoneyBack</RefundOption>
+			<ReturnsWithinOption>Days_30</ReturnsWithinOption>
+			<ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
+		</ReturnPolicy>
+		<ShippingDetails>
+			<CalculatedShippingRate>
+				<OriginatingPostalCode>95125</OriginatingPostalCode>
+			</CalculatedShippingRate>
+			<PaymentInstructions>Payment must be received within 7 business days of purchase.</PaymentInstructions>
+			<SalesTax>
+				<SalesTaxPercent>8.75</SalesTaxPercent>
+				<SalesTaxState>CA</SalesTaxState>
+			</SalesTax>
+			<ShippingServiceOptions>
+				<FreeShipping>true</FreeShipping>
+				<ShippingService>USPSPriority</ShippingService>
+				<ShippingServicePriority>1</ShippingServicePriority>
+			</ShippingServiceOptions>
+			<ShippingServiceOptions>
+				<ShippingService>UPSGround</ShippingService>
+				<ShippingServicePriority>2</ShippingServicePriority>
+			</ShippingServiceOptions>
+			<ShippingServiceOptions>
+				<ShippingService>UPSNextDay</ShippingService>
+				<ShippingServicePriority>3</ShippingServicePriority>
+			</ShippingServiceOptions>
+			<ShippingType>Calculated</ShippingType>
+		</ShippingDetails>
+		<ShippingPackageDetails>
+	      <MeasurementUnit>English</MeasurementUnit>
+	      <PackageDepth>6</PackageDepth>
+	      <PackageLength>7</PackageLength>
+	      <PackageWidth>7</PackageWidth>
+	      <ShippingPackage>PackageThickEnvelope</ShippingPackage>
+	      <WeightMajor>2</WeightMajor>
+	      <WeightMinor>0</WeightMinor>
+       </ShippingPackageDetails>
+		<Variations>
+			<VariationSpecificsSet>
+				<NameValueList>
+					<Name>Color</Name>
+					<Value>C01</Value>
+					<Value>C02</Value>
+					<Value>C03</Value>
+					<Value>C04</Value>
+					<Value>C05</Value>
+					<Value>C06</Value>
+				</NameValueList>
+			</VariationSpecificsSet>
+			<Variation>
+				<SKU>153428980188_C01</SKU>
+				<StartPrice>10.99</StartPrice>
+				<Quantity>1</Quantity>
+				<VariationSpecifics>
+					<NameValueList>
+						<Name>Color</Name>
+						<Value>C01</Value>
+					</NameValueList>
+				</VariationSpecifics>
+			</Variation>
+			<Variation>
+				<SKU>153428980188_C02</SKU>
+				<StartPrice>10.99</StartPrice>
+				<Quantity>1</Quantity>
+				<VariationSpecifics>
+					<NameValueList>
+						<Name>Color</Name>
+						<Value>C02</Value>
+					</NameValueList>
+				</VariationSpecifics>
+			</Variation>
+			<Variation>
+				<SKU>153428980188_C03</SKU>
+				<StartPrice>10.99</StartPrice>
+				<Quantity>1</Quantity>
+				<VariationSpecifics>
+					<NameValueList>
+						<Name>Color</Name>
+						<Value>C03</Value>
+					</NameValueList>
+				</VariationSpecifics>
+			</Variation>
+			<Variation>
+				<SKU>153428980188_C04</SKU>
+				<StartPrice>10.99</StartPrice>
+				<Quantity>1</Quantity>
+				<VariationSpecifics>
+					<NameValueList>
+						<Name>Color</Name>
+						<Value>C04</Value>
+					</NameValueList>
+				</VariationSpecifics>
+			</Variation>
+			<Variation>
+				<SKU>153428980188_C05</SKU>
+				<StartPrice>10.99</StartPrice>
+				<Quantity>1</Quantity>
+				<VariationSpecifics>
+					<NameValueList>
+						<Name>Color</Name>
+						<Value>C05</Value>
+					</NameValueList>
+				</VariationSpecifics>
+			</Variation>
+			<Variation>
+				<SKU>153428980188_C06</SKU>
+				<StartPrice>10.99</StartPrice>
+				<Quantity>1</Quantity>
+				<VariationSpecifics>
+					<NameValueList>
+						<Name>Color</Name>
+						<Value>C06</Value>
+					</NameValueList>
+				</VariationSpecifics>
+			</Variation>
+		</Variations>
+	</Item>
+	<RequesterCredentials>
+		<eBayAuthToken>AgAAAA**AQAAAA**aAAAAA**x0+QXA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6ADloOoCZCHoQydj6x9nY+seQ**8toFAA**AAMAAA**GUveEELf6OyzywF1LZ2AxnLxoiLtqd0fUFtlgBBHlFcJq+f4tYfRp6Hu/u3otqXoxamaN2dNjjZxAXfFvCgEYKyW40ZZFLlb2Pnql1rQmrNRILlBWp/W6JMu7NgLPUm4u0rGujHC36FFU+2AsFdq3RUulbUYXWcJmxgeRYKQYbIVYj6+3dTzbK29OS0dZW4G10ekYLN81//OWdVHL/s208sF6YDxfljGJa2gXEFxLZcHpa4GnVLhLiTqMnP7PF7EPPVT8k540EoVFoShsjJ7XGFE5hdaR+TRXY5l5g/kaGPYrOOxvSHEgK2LELx5q1TlIX9LY25bA4y4xtJwCuOXCKdjN1lJAugAartDhsyFaFNI3sn+4+N43O9VwyJv9Yez+ycQSuTVnnIbB7yO/wvW5DuAVRGMTmzeamStTyoRVplkDLGoumCIhgDX4s52aSuD9MJaKBoJIJmwBi1tNjILeQfQsAb+zT0UTMJ8yF+/yy/Xu517mbyvfEuu3eTnVMMaXwNTDdNC2bcICUX22/sBVRj+qRpJFkuVTVTx9pVZvOJfwjw6HTC53BNkJ7xb/hHT0Rp6aHKbqsJ5D2yRPZX5FxThwO8yp7pbiiDVJthYCyUEheKVaSO/Z2uM7kvRUXZi2C0eQQ94SWik+tjto2LDHZXUUXgqIOPeQb46rnh0F5NmoS1OOpAlV/XghGyAYPHg6qY+fsabmldkPgA3SLCUik4NmArm2+HdAS7G48wr8uJkxphmeVtGvf3KTqLM8iLv</eBayAuthToken>
+	</RequesterCredentials>
+</AddFixedPriceItemRequest>
+

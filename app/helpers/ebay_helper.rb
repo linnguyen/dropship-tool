@@ -1,5 +1,5 @@
 module EbayHelper
-  def get_decription title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
+  def get_description title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
 
     itemSpecific = ""
     itemSpecificHash.each do |key, value|
@@ -265,6 +265,116 @@ module EbayHelper
     </AddItemRequest>'
   end
 
+  def add_item_req token, title, description, categoryID, pictureUrls
+    req = '
+    <?xml version="1.0" encoding="utf-8"?>
+        <AddItemRequest
+    xmlns="urn:ebay:apis:eBLBaseComponents">
+    <RequesterCredentials>
+    <eBayAuthToken>' + token + '</eBayAuthToken>
+	</RequesterCredentials>
+    <ErrorLanguage>en_US</ErrorLanguage>
+	<WarningLevel>High</WarningLevel>
+    <Item>
+    <Title>' + title + '</Title>
+		<Description><![CDATA[' + description + ']]></Description>
+    <PrimaryCategory>
+    <CategoryID>' + categoryID.to_s + '</CategoryID>
+		</PrimaryCategory>
+    <StartPrice>1.0</StartPrice>
+		<CategoryMappingAllowed>true</CategoryMappingAllowed>
+    <ConditionID>4000</ConditionID>
+		<Country>US</Country>
+    <Currency>USD</Currency>
+		<DispatchTimeMax>3</DispatchTimeMax>
+    <ListingDuration>Days_7</ListingDuration>
+		<ListingType>Chinese</ListingType>
+    <PaymentMethods>PayPal</PaymentMethods>
+		<PayPalEmailAddress>nguyenvanlin01041994@gmail.com</PayPalEmailAddress>
+    <PictureDetails>
+    <GalleryType>Gallery</GalleryType>
+    ' + pictureUrls + '
+		</PictureDetails>
+    <ConditionID>1000</ConditionID>
+    <PostalCode>95125</PostalCode>
+		<Quantity>1</Quantity>
+    <ReturnPolicy>
+    <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
+			<RefundOption>MoneyBack</RefundOption>
+    <ReturnsWithinOption>Days_30</ReturnsWithinOption>
+			<ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
+    </ReturnPolicy>
+		<ShippingDetails>
+			<ShippingType>Flat</ShippingType>
+    <ShippingServiceOptions>
+    <ShippingServicePriority>1</ShippingServicePriority>
+				<ShippingService>USPSMedia</ShippingService>
+    <ShippingServiceCost>2.50</ShippingServiceCost>
+			</ShippingServiceOptions>
+    </ShippingDetails>
+		<Site>US</Site>
+    </Item>
+    </AddItemRequest>'
+  end
+
+  def add_fixed_price_item_req token, title, description, categoryID, pictureUrls
+    req = '<?xml version="1.0" encoding="utf-8"?>
+        <AddFixedPriceItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">
+    <RequesterCredentials>
+    <eBayAuthToken>' + token + '</eBayAuthToken>
+  </RequesterCredentials>
+    <ErrorLanguage>en_US</ErrorLanguage>
+  <WarningLevel>High</WarningLevel>
+    <Item>
+    <Title>' + title + '</Title>
+    <Description><![CDATA[' + description + ']]></Description>
+    <PrimaryCategory>
+      <CategoryID>' + +categoryID + '</CategoryID>
+    </PrimaryCategory>
+    <StartPrice>3.9</StartPrice>
+    <CategoryMappingAllowed>true</CategoryMappingAllowed>
+    <ConditionID>1000</ConditionID>
+    <Country>US</Country>
+    <Currency>USD</Currency>
+    <DispatchTimeMax>3</DispatchTimeMax>
+    <ListingDuration>GTC</ListingDuration>
+    <ListingType>FixedPriceItem</ListingType>
+    <PaymentMethods>PayPal</PaymentMethods>
+    <PayPalEmailAddress>nguyenvanlin01041994@gmail.com</PayPalEmailAddress>
+    <PictureDetails>
+      <GalleryType>Gallery</GalleryType>
+    ' + pictureUrls + '
+    </PictureDetails>
+    <PostalCode>95125</PostalCode>
+    <ProductListingDetails>
+      <UPC>885909298594</UPC>
+    <IncludeStockPhotoURL>true</IncludeStockPhotoURL>
+      <IncludeeBayProductDetails>true</IncludeeBayProductDetails>
+    <UseFirstProduct>true</UseFirstProduct>
+      <UseStockPhotoURLAsGallery>true</UseStockPhotoURLAsGallery>
+    <ReturnSearchResultOnDuplicates>true</ReturnSearchResultOnDuplicates>
+    </ProductListingDetails>
+    <Quantity>6</Quantity>
+    <ReturnPolicy>
+      <ReturnsAcceptedOption>ReturnsAccepted</ReturnsAcceptedOption>
+    <RefundOption>MoneyBack</RefundOption>
+      <ReturnsWithinOption>Days_30</ReturnsWithinOption>
+    <ShippingCostPaidByOption>Buyer</ShippingCostPaidByOption>
+    </ReturnPolicy>
+    <ShippingDetails>
+    <ShippingType>Flat</ShippingType>
+      <ShippingServiceOptions>
+        <ShippingServicePriority>1</ShippingServicePriority>
+    <ShippingService>UPSGround</ShippingService>
+        <FreeShipping>true</FreeShipping>
+    <ShippingServiceAdditionalCost currencyID="USD">0.00</ShippingServiceAdditionalCost>
+      </ShippingServiceOptions>
+    </ShippingDetails>
+    <Site>US</Site>
+    </Item>
+    </AddFixedPriceItemRequest>'
+  end
+
   def get_valid_title title
     valid_name = ""
     title_arr = title.split(" ")
@@ -277,5 +387,13 @@ module EbayHelper
       end
     end
     return valid_name.strip
+  end
+
+  def image_url url_str
+    image_thumb_str = ""
+    url_str.to_s.split(";").each do |url|
+      image_thumb_str += '<PictureURL>' + url + '</PictureURL>'
+    end
+    return image_thumb_str
   end
 end

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <h2><strong>Find me in app/views/ebay/get_product.html.erb </strong>
+      <h2><strong>Find me in app/views/get_product.html.erb </strong>
       </h2>
       <!-- Start form -->
       <%= form_tag crawl_path do %>
@@ -24,19 +24,30 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <label>Valid Title</label>
           <div class="form-group">
-            <%= text_field_tag :url, @valid_title, class: 'form-control' %>
+            <%= text_field_tag :valid_title, @valid_title, class: 'form-control' %>
           </div>
           <label>Price</label>
           <div class="form-group">
-            <%= text_field_tag :url, "", class: 'form-control' %>
+            <%= text_field_tag :price, "", class: 'form-control' %>
           </div>
           <label>Suggested Category Id</label>
           <div class="form-group">
-            <%= text_field_tag :url, @categoryId, class: 'form-control' %>
+            <%= text_field_tag :category_id, @categoryId, class: 'form-control' %>
+          </div>
+          <label>Image url</label>
+          <div class="form-group">
+            <%= text_field_tag :urls, @image_thumb_list, class: 'form-control' %>
+          </div>
+          <div class="row">
+            <% @image_thumb_list.to_s.split(";").each do |url|  %>
+              <div class="col-md-4">
+                <%= image_tag url, style: "width: 100%;"  %>
+              </div>
+            <% end %>
           </div>
           <label>Description</label>
           <div class="form-group">
-            <%= cktext_area_tag :body, @description %>
+            <%= cktext_area_tag :description, @description %>
           </div>
           <div class="form-check">
             <%= submit_tag "Send to ebay", class: "btn btn-info" %>
