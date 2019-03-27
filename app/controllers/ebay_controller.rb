@@ -66,6 +66,20 @@ class EbayController < ApplicationController
 
       @description = get_description title, altMainImage, mainImageUrl, itemSpecificHash, packageDetailHash, description
 
+      # if product have variant
+      property_item = doc.css('#j-product-info-sku dl')
+      if (property_item.size == 1) # only one variant
+        property_item.first.css('.p-item-main ul li').each do |li|
+          li.click
+        end
+      end
+      # doc.css('#j-product-info-sku dl').each do |dl|
+      #   dl.css('.p-item-main ul li').each do |list1|
+      #
+      #   end
+      # end
+      # find('button.filter-case-studies').click
+
 
       #GET SUGGESTED CATEGORIES
       #---------------------------------------------------------------------------------------------------------------------------------------------
